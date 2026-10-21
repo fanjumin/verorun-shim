@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+.venv/
+venv/
+
+# 打包产物
+*.whl
+*.tar.gz
+
+# 本地密钥（MCP registry 命名空间私钥绝不可入库）
+key.pem
+*.pem
+.env
+.env.*
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

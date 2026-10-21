@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "verorun-mcp-shim"
+version = "1.0.0"
+description = "Thin MCP proxy for a self-hosted VeroRun instance (zero dependencies)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "VeroRun" }]
+keywords = ["mcp", "model-context-protocol", "verorun"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+# 刻意保持为空：shim 只允许 CPython 标准库。
+# 任何依赖引入都会扩大镜像攻击面并可能把凭据处理逻辑带进来。
+dependencies = []
+
+[project.scripts]
+# main() 返回 int，setuptools 生成的入口脚本会 sys.exit(返回值)，退出码即点亮
+verorun-mcp-shim = "mcp_shim:main"
+
+[project.urls]
+Homepage = "https://github.com/fanjumin/verorun-shim"
+Repository = "https://github.com/fanjumin/verorun-shim"
+Issues = "https://github.com/fanjumin/verorun-shim/issues"
+
+[tool.setuptools]
+py-modules = ["mcp_shim"]

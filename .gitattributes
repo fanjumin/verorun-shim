@@ -1,0 +1,8 @@
+# 统一 LF：容器内（alpine）与各平台 git 客户端行为一致，避免 CRLF 混入镜像
+* text=auto eol=lf
+*.py   text eol=lf
+*.md   text eol=lf
+*.toml text eol=lf
+*.json text eol=lf
+Dockerfile text eol=lf
+LICENSE    text eol=lf
